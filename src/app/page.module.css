@@ -1,46 +1,24 @@
-.container {
-  min-height: 100vh;
-  background: #0b0f14;
-  color: #e6e6e6;
-  padding: 80px 20px;
-  font-family: ui-sans-serif, system-ui;
-  max-width: 1000px;
-  margin: 0 auto;
-}
 
-.hero h1 {
-  font-size: 48px;
-  margin: 0;
-}
+.wrapper::before {
+  content: "";
 
-.subtitle {
-  opacity: 0.7;
-  margin-top: 10px;
-}
+  position: fixed;
+  inset: 0;
 
-.links {
-  margin-top: 20px;
-  display: flex;
-  gap: 15px;
-}
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.05) 1px,
+      transparent 1px
+    );
 
-.links a {
-  color: #7aa2ff;
-  text-decoration: none;
-}
+  background-size: 40px 40px;
 
-.section {
-  margin-top: 60px;
-}
+  pointer-events: none;
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-}
-
-.stack {
-  display: grid;
-  gap: 16px;
-  opacity: 0.9;
+  z-index: 0;
 }

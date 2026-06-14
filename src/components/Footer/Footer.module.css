@@ -1,0 +1,39 @@
+.footer {
+  padding: 3rem 8vw;
+}
+
+.inner {
+  max-width: 1400px;
+  margin-inline: auto;
+
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.inner a {
+  color: inherit;
+
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+
+  transition: 0.2s;
+}
+
+.inner a:hover {
+  color: white;
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 700px) {
+  .inner {
+    flex-direction: column;
+  }
+}

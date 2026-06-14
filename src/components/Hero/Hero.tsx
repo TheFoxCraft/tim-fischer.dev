@@ -1,24 +1,17 @@
+import { links } from "@/utils/const";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="">
       <div className={styles.card}>
         <div className={styles.links}>
-          <a
-            className={styles.iconButton}
-            href="https://github.com/TheFoxCraft"
-            target="_blank"
-          >
-            <img src="/icons/github.svg" alt="GitHub" />
+          <a className={styles.iconButton} href={links.github} target="_blank">
+            <img src="/logos/github.svg" alt="GitHub" />
           </a>
 
-          <a
-            className={styles.iconButton}
-            href="https://discord.com/users/1068182029570691082"
-            target="_blank"
-          >
-            <img src="/icons/discord.svg" alt="Discord" />
+          <a className={styles.iconButton} href={links.discord} target="_blank">
+            <img src="/logos/discord.svg" alt="Discord" />
           </a>
         </div>
 

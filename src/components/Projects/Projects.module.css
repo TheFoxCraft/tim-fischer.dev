@@ -1,0 +1,188 @@
+.section {
+  padding: 12rem 8vw;
+}
+
+.inner {
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.label {
+  display: block;
+
+  color: var(--muted);
+
+  margin-bottom: 3rem;
+
+  letter-spacing: 0.3em;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1.5rem;
+}
+
+.card {
+  min-height: 280px;
+
+  padding: 2rem;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 24px;
+
+  transition: 0.25s ease;
+
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 1rem;
+
+  margin-bottom: 1rem;
+}
+
+.header h3 {
+  font-size: 2rem;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.private {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  padding: 0.35rem 0.65rem;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.projectLink {
+  position: absolute;
+
+  bottom: 2rem;
+  right: 2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: var(--text);
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  transition: 0.2s ease;
+}
+
+.projectLink:hover {
+  transform: translateY(-2px);
+}
+
+.tags,
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tags {
+  margin-top: 1.5rem;
+}
+
+.tech {
+  margin-top: 1rem;
+}
+
+.tags span {
+  padding: 0.45rem 0.8rem;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  font-size: 0.85rem;
+}
+
+.tech span {
+  padding: 0.35rem 0.7rem;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.arrow {
+  position: absolute;
+
+  bottom: 2rem;
+  right: 2rem;
+
+  font-size: 2rem;
+
+  color: var(--accent);
+}
+
+.footer {
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.viewAll {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  text-decoration: none;
+  color: var(--text);
+
+  padding: 1rem 1.25rem;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  transition: 0.2s ease;
+}
+
+.viewAll:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 8rem 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

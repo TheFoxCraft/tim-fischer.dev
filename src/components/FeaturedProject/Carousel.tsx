@@ -1,9 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./Carousel.module.css";
+import { useVisible } from "@/utils/visibleDetector";
 
 type Props = {
   slides: React.ReactNode[];
@@ -20,6 +21,9 @@ export default function Carousel({ slides, autoplayMs = 5000 }: Props) {
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const [hovered, setHovered] = useState(false);
   const [progress, setProgress] = useState(0);
+
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const visible = useVisible(carouselRef);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -43,7 +47,7 @@ export default function Carousel({ slides, autoplayMs = 5000 }: Props) {
   }, [emblaApi]);
 
   useEffect(() => {
-    if (!emblaApi || hovered) return;
+    if (!emblaApi || hovered || !visible) return;
 
     let frame: number;
     let start = Date.now();
@@ -64,13 +68,14 @@ export default function Carousel({ slides, autoplayMs = 5000 }: Props) {
     frame = requestAnimationFrame(loop);
 
     return () => cancelAnimationFrame(frame);
-  }, [emblaApi, hovered, autoplayMs]);
+  }, [emblaApi, hovered, autoplayMs, visible]);
 
   return (
     <div
       className={styles.wrapper}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      ref={carouselRef}
     >
       <div className={styles.viewport} ref={emblaRef}>
         <div className={styles.container}>

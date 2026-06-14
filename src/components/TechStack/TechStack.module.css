@@ -1,0 +1,116 @@
+.section {
+  padding: 12rem 8vw;
+}
+
+.inner {
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5rem;
+  color: var(--muted);
+  letter-spacing: 0.3em;
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.groupHeader h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.groupIcon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: var(--muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.tag {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  padding: 0.7rem 1rem;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-size: 0.95rem;
+
+  transition: 0.2s ease;
+}
+
+.accentBg {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.12;
+  filter: blur(10px);
+
+  transition: 0.2s ease;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+}
+
+.tag span {
+  position: relative;
+  z-index: 2;
+}
+
+.tag:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.tag:hover .accentBg {
+  opacity: 0.25;
+}
+
+.tag:hover {
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}

@@ -1,5 +1,6 @@
 import styles from "./FeaturedProject.module.css";
 import Carousel from "./Carousel";
+import Image from "next/image";
 
 export default function FeaturedProject() {
   const imageBaseUrl = (img: string) => `/projects/elements/${img}.png`;
@@ -28,13 +29,13 @@ export default function FeaturedProject() {
   ];
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="featured-project">
       <div className={styles.inner}>
         <span className={styles.label}>FEATURED PROJECT</span>
 
         <Carousel
           slides={images.map((i) => (
-            <img src={imageBaseUrl(i)} />
+            <Image src={imageBaseUrl(i)} alt={i} width={2560} height={1440} />
           ))}
         />
 
@@ -60,7 +61,7 @@ export default function FeaturedProject() {
             rel="noreferrer"
             className={styles.link}
           >
-            <img src="/icons/github.svg" alt="" />
+            <Image src="/logos/github.svg" alt="" width={24} height={24} />
             View Source
           </a>
 
@@ -70,7 +71,7 @@ export default function FeaturedProject() {
             rel="noreferrer"
             className={styles.link}
           >
-            <img src="/icons/modrinth.svg" alt="" />
+            <Image src="/logos/modrinth.svg" alt="" width={24} height={24} />
             Download Datapack
           </a>
         </div>
