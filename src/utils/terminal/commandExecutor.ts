@@ -84,10 +84,34 @@ export function executeCommand(
     return;
   }
 
-  if (
-    command === "sudo rm -rf /" ||
-    command === "sudo rm -rf --no-preserve-root /"
-  ) {
+  function isNukeCommand(command: string) {
+    const parts = command.trim().split(/\s+/);
+
+    if (parts[0] === "sudo") {
+      parts.shift();
+    }
+
+    if (parts[0] !== "rm") {
+      return false;
+    }
+
+    const hasRecursive =
+      parts.includes("-r") ||
+      parts.includes("-R") ||
+      parts.some((p) => p.includes("r") && p.startsWith("-"));
+
+    const hasForce =
+      parts.includes("-f") ||
+      parts.some((p) => p.includes("f") && p.startsWith("-"));
+
+    const targets = parts.filter((p) => !p.startsWith("-"));
+
+    const nukesRoot = targets.some((t) => ["/", "/.", "/*"].includes(t));
+
+    return hasRecursive && hasForce && nukesRoot;
+  }
+
+  if (isNukeCommand(command)) {
     document.body.innerHTML = "";
     return;
   }
