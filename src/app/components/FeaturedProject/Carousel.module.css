@@ -1,0 +1,124 @@
+.wrapper {
+  position: relative;
+
+  border-radius: 24px;
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  background: var(--surface);
+
+  max-height: 520px;
+  aspect-ratio: 16 / 9;
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+}
+
+.slide {
+  flex: 0 0 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--surface);
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 520px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 999px;
+
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  color: white;
+}
+
+.prev {
+  left: 12px;
+}
+
+.next {
+  right: 12px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 14px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.dotActive {
+  width: 18px;
+  background: white;
+}
+
+.progressTrack {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.progressBar {
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  background: white;
+}

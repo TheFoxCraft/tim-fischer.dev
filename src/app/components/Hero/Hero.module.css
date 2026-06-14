@@ -1,0 +1,166 @@
+.hero {
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  padding: 2rem;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.04),
+      transparent 65%
+    ),
+    #0a0a0a;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1.2rem;
+
+  padding: 3rem 2.5rem;
+
+  border: 1px solid var(--border);
+
+  border-radius: 24px;
+
+  background: rgba(17, 17, 17, 0.6);
+
+  backdrop-filter: blur(20px);
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 1px solid var(--border);
+
+  z-index: 2;
+}
+
+.card h1 {
+  font-size: 2.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  color: var(--muted);
+
+  font-size: 1rem;
+
+  text-align: center;
+
+  max-width: 300px;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.iconButton {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  border: 1px solid var(--border);
+
+  background: rgba(255, 255, 255, 0.02);
+
+  transition: 0.2s;
+
+  padding: 0;
+}
+
+.iconButton:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--accent);
+}
+
+.iconButton img {
+  width: 26px;
+  height: 26px;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  color: var(--muted);
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+}
+
+.mouse {
+  width: 16px;
+  height: 26px;
+
+  border: 1px solid var(--muted);
+  border-radius: 999px;
+
+  display: flex;
+  justify-content: center;
+
+  padding-top: 6px;
+}
+
+.wheel {
+  width: 2px;
+  height: 4px;
+
+  background: var(--muted);
+
+  border-radius: 2px;
+
+  animation: scroll 1.6s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.2;
+  }
+}
