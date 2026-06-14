@@ -18,6 +18,6 @@ COPY --from=builder /app ./
 
 ENV NODE_ENV=production
 
-EXPOSE 3000
+EXPOSE 8081
 
 CMD ["npm", "run", "start"]
