@@ -2,7 +2,7 @@ import About from "../components/About/About";
 import Socials from "../components/Socials/Socials";
 import FeaturedProject from "../components/FeaturedProject/FeaturedProject";
 import Hero from "../components/Hero/Hero";
-import Projects from "../components/Projects/Projects";
+import Projects from "../components/projects/Projects";
 import TechStack from "../components/TechStack/TechStack";
 import Terminal from "../components/Terminal/Terminal";
 import Footer from "../components/Footer/Footer";
