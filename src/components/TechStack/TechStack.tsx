@@ -133,12 +133,6 @@ const techGroups: {
         logo: "/logos/discord.svg",
         website: "https://docs.discord.com/developers/intro",
       },
-      {
-        name: "NGINX",
-        color: "#009639",
-        logo: "/logos/nginx.svg",
-        website: "https://nginx.org",
-      },
     ],
   },
   {
@@ -163,6 +157,24 @@ const techGroups: {
         logo: "/logos/redis.svg",
         website: "https://redis.io/",
       },
+      {
+        name: "Mongoose",
+        color: "#880000",
+        logo: "/logos/mongoose.svg",
+        website: "https://mongoosejs.com/",
+      },
+      {
+        name: "MongoDB",
+        color: "#47A248",
+        logo: "/logos/mongodb.svg",
+        website: "https://www.mongodb.com/",
+      },
+      {
+        name: "MinIO",
+        color: "#C72E49",
+        logo: "/logos/minio.svg",
+        website: "https://www.min.io/",
+      },
     ],
   },
   {
@@ -186,6 +198,18 @@ const techGroups: {
         color: "#2496ED",
         logo: "/logos/docker.svg",
         website: "https://www.docker.com/",
+      },
+      {
+        name: "NGINX",
+        color: "#009639",
+        logo: "/logos/nginx.svg",
+        website: "https://nginx.org",
+      },
+      {
+        name: "Caddy",
+        color: "#1F88C9",
+        logo: "/logos/caddy.svg",
+        website: "https://caddyserver.com/",
       },
       {
         name: "Linux",
