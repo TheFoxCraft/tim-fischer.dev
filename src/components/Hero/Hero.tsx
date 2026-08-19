@@ -19,7 +19,7 @@ export default function Hero() {
 
         <h1>Tim Fischer</h1>
 
-        <p className={styles.subtitle}>Java, Kotlin and TypeScript Developer</p>
+        <p className={styles.subtitle}>Self-Taught Java, Kotlin and TypeScript Developer</p>
       </div>
 
       <div className={styles.scroll}>
